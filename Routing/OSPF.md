@@ -1,5 +1,7 @@
 # OSPF
 
+1. [Router ID](#router-id)
+
 ## Router ID
 
 * 32 Bit, like ipv4 address even for OSPFv3
