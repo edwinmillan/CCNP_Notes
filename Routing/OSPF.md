@@ -32,6 +32,20 @@
 * Subnet mask is only check on broadcast media links
 
 ### Databse Description (DBD)
+* MTU's Must Match
+* EXSTART (Exchange Start)
+* Node with higher Router ID (RID) becomes Master
+* Only Master can increment DBD Sequence Number
+* DBD Bits
+    * R: OOBResync
+    * I: Init
+    * M: More
+    * MS: Master
+* Key DBD Bit Value:
+    * I=1 & M=0: Single DBD packet describes all LSA headers
+    * I=1 & M=1: series of DBD packets needed for all LSA headers
+    * I=0 & M=0: last DBD packet
+    * I=0 & M=1: set in the DBD packets that are between first and last DBD packet
 ### Link-State Request (LSR)
 ### Link-State Update (LSU)
 ### Link-State Acknowledgement (LSAck)
@@ -42,8 +56,8 @@
 * Backup Designated Router: TBD
 * Protocol: OSPF IGP (89)
 
-
 ## Commands
-* `RT(config)# router ospf <process id>` 
+* `RT(config)# router ospf <process id>`
 * `RT# show ip ospf neighbors`
 * `RT# show ip ospf interface <interface>`
+* `RT# clear ip ospf <proc_ID>`
